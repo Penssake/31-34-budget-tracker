@@ -8,9 +8,7 @@ import * as expense from '../../action/expense.js'
 
 class CategoryItem extends React.Component {
   render(){
-    let {
-      category, categoryRemove, categoryUpdate, expenseCreate, expenses,
-    } = this.props
+    let { category, categoryRemove, categoryUpdate, expenseCreate, expenses } = this.props
 
     let categoryExpenses = expenses[category.id]
 

@@ -6,10 +6,7 @@ import * as category from '../../action/category.js'
 
 class Dashboard extends React.Component {
   render(){
-    let {
-      categories,
-      categoryCreate,
-    } = this.props
+    let { categories, categoryCreate } = this.props
 
     return (
       <div className='dashboard'>
