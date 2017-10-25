@@ -8,7 +8,7 @@ let clearState = {
 class ExpenseForm extends React.Component {
   constructor(props) {
     super(props)
-    let {note} = props
+    let {expense} = props
     this.state = props.expense || clearState
 
     this.handleSubmit = this.handleSubmit.bind(this)
