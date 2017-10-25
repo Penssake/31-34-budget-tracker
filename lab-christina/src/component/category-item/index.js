@@ -9,7 +9,7 @@ import * as expense from '../../action/expense.js'
 class CategoryItem extends React.Component {
   render(){
     let {
-      category, categoryDestroy, categoryUpdate, expenseCreate, expenses,
+      category, categoryRemove, categoryUpdate, expenseCreate, expenses,
     } = this.props
 
     let categoryExpenses = expenses[category.id]
@@ -18,7 +18,7 @@ class CategoryItem extends React.Component {
       <div className='category-item'>
         <h3><strong>{category.name}</strong></h3>
         <p>${category.amount}</p>
-        <button onClick={() => categorRemove(category)}> remove </button>
+        <button onClick={() => categoryRemove(category)}> remove </button>
 
           <CategoryForm onComplete={categoryUpdate} category={category}/>
 
@@ -37,7 +37,7 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   categoryUpdate: (data) => dispatch(category.update(data)),
-  categoryRemove: (data) => dispatch(category.Remove(data)),
+  categoryRemove: (data) => dispatch(category.remove(data)),
   expenseCreate: (data) => dispatch(expense.create(data)),
 })
 

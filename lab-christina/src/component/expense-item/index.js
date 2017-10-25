@@ -17,7 +17,7 @@ class Expense extends React.Component {
   }
 }
 
-let mapStateToProps = ({})
+let mapStateToProps = (state) => ({})
 
 let mapDispatchToProps = (dispatch) => ({
   expenseRemove: (data) => dispatch(expense.remove(data)),
