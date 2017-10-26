@@ -4,8 +4,9 @@ class Landing extends React.Component {
   render(){
     return (
       <div className='landing'>
-        <h1>Budget</h1>
-        <p>Budget App</p>
+        <h1> Ode to Budget </h1>
+        <p> Mo money, Mo problems </p>
+        <p> Less money, Mo problems </p>
       </div>
     )
   }
