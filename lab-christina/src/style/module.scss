@@ -1,0 +1,64 @@
+@import 'vars';
+
+html,
+body {
+  background-color: $background-color-white;
+}
+
+nav {
+  background-color: $background-color-white;
+}
+
+button {
+  display: block;
+  background-color: $primary-color-purple;
+  color: $background-color-white;
+  width: 100px;
+}
+
+button:hover {
+  background-color: $accent-color-lime;
+  color: $primary-color-purple;
+}
+
+form {
+  display: inline-block;
+}
+// nav {
+//   width: 100%;
+//   padding: 0.1em;
+// }
+//
+// nav ul {
+//   padding: 0;
+//   list-style: none;
+//   clear: both;
+// }
+//
+// li a:hover {
+//   text-transform: uppercase;
+// }
+//
+// nav li {
+//   font-size: 1.5em;
+//   padding: .5em .2em;
+//   border-bottom: 1px solid #A3B200;
+//   text-align: center;
+// }
+//
+// button {
+//   font-size: 1em;
+//   width: 6em;
+//   padding: 0.2em;
+//   letter-spacing: 0.2em;
+// }
+//
+// button:hover {
+//   background-color: $accent-color;
+//   color: $primary-color;
+// }
+//
+//
+// form {
+//   display: inline-block;
+// }

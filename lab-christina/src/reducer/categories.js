@@ -1,5 +1,10 @@
 const emptyState = []
 
+export const validateCategory = (category) => {
+    if(!category.name)
+      throw new Error('category expected')
+}
+
 export default (state = emptyState, {type, payload}) => {
   switch(type){
     case 'CATEGORY_CREATE':

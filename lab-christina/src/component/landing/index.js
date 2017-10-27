@@ -1,4 +1,5 @@
 import React from 'react'
+import './landing.scss'
 
 class Landing extends React.Component {
   render(){

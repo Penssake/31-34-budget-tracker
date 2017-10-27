@@ -64,6 +64,7 @@ class ExpenseForm extends React.Component {
         />
         <button type='submit'> {buttonText} </button>
       </form>
+
     )
   }
 }
