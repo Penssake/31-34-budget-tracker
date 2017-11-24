@@ -10,7 +10,7 @@ class Dashboard extends React.Component {
 
     return (
       <div className='dashboard'>
-      <h3> pie & dough </h3>
+      <h3> Dashboard </h3>
 
         <CategoryForm onComplete={categoryCreate} />
         {categories.map((category, i) =>

@@ -2,6 +2,8 @@ import React from 'react'
 import ExpenseForm from '../expense-form'
 import { connect } from 'react-redux'
 import * as expense from '../../action/expense.js'
+import * as util from '../../lib/util.js'
+
 
 class Expense extends React.Component {
   constructor(props) {
@@ -17,17 +19,20 @@ class Expense extends React.Component {
   }
 
   render() {
-    let { editing } = this.state
-    let { expense, expenseRemove, expenseUpdate } = this.props
+    let {editing} = this.state
+    let {expense, expenseRemove, expenseUpdate} = this.props
     return (
       <div className='expense-item'>
 
-      { util.renderIf(!editing,
-        <h3><strong> { expense.name } </strong></h3>) }
-        <p> ${ expense.price } </p>
+      {util.renderIf(!editing,
+        <h3><strong> {expense.name} </strong></h3>)}
 
-      { util.renderIf(editing,
-        <ExpenseForm onComplete = { this.handleUpdate } expense={ expense } /> )}
+      {util.renderIf(!editing,
+        <p> ${expense.price} </p>)}
+
+      {util.renderIf(editing,
+        <ExpenseForm onComplete = {this.handleUpdate} expense={expense} />
+      )}
 
         <button onClick = { () => expenseRemove(expense) }> remove </button>
       </div>

@@ -5,6 +5,7 @@ import * as category from '../../action/category.js'
 import ExpenseForm from '../expense-form'
 import ExpenseItem from '../expense-item'
 import * as expense from '../../action/expense.js'
+import * as util from '../../lib/util.js'
 
 class CategoryItem extends React.Component {
   render(){
