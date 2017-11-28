@@ -23,11 +23,12 @@ class CategoryItem extends React.Component {
   }
 
   render(){
-    let {categoryDragToSection, category, categoryRemove, categoryUpdate, expenseCreate, expenses} = this.props
+    let {categoryDragToSection, category, categoryRemove, updateCategory, categoryUpdate, expenseCreate, expenses} = this.props
     let categoryExpenses = expenses[category.id]
     let {editing} = this.state;
 
     return (
+      <DropZone onComplete={(expense) => categoryDragToSection(expense, category.id)}>
       <div className='category-item'>
           <section className='category-item'>
             <button className='remove-button' onClick={() => categoryRemove(category)}> x </button>
@@ -47,8 +48,8 @@ class CategoryItem extends React.Component {
             <ExpenseItem expense={expense} key={i} />
           )}
       </section>
-
       </div>
+      </DropZone>
     )
   }
 }
@@ -59,7 +60,7 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   categoryUpdate: (data) => dispatch(category.update(data)),
-  categoryDragToSection: (data, categoryID) => dispatch(category.updateCategory(data, categoryID)),
+  categoryDragToSection: (data, categoryID) => dispatch(expense.updateCategory(data, categoryID)),
   categoryRemove: (data) => dispatch(category.remove(data)),
   expenseCreate: (data) => dispatch(expense.create(data)),
 })

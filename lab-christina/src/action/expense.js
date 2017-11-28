@@ -8,6 +8,11 @@ export const create = ({name, price, categoryID}) => ({
   },
 })
 
+export const updateCategory = (expense, categoryID) => ({
+  type: 'EXPENSE_UPDATE_CATEGORY_ID',
+  payload: {expense, categoryID}
+})
+
 export const update = (expense) => ({
   type: 'EXPENSE_UPDATE',
   payload: expense,
