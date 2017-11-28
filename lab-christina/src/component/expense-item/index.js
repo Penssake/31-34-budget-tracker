@@ -15,7 +15,7 @@ class Expense extends React.Component {
   }
 
   handleUpdate(expense){
-    this.props.updateExpense(expense)
+    this.props.expenseUpdate(expense)
     this.setState({editing: false})
   }
 
@@ -25,15 +25,17 @@ class Expense extends React.Component {
 
     return (
       <div className='expense-item'>
-        <button className='remove-button' onClick={() => expenseRemove(expense)}> x </button>
-        <button onClick={() => this.setState({editing:true})} className='update-button'>&#9998;</button>
+      {util.renderIf(!editing,
+        <button className='remove-button' onClick={() => expenseRemove(expense)}> x </button>)}
+      {util.renderIf(!editing,
+        <button onClick={() => this.setState({editing:true})} className='update-button'>&#9998;</button>)}
 
         <Draggable data={expense} >
         {util.renderIf(!editing,
           <h3><strong> {expense.name} ${expense.price} </strong></h3>)}
         </Draggable>
         {util.renderIf(editing,
-        <ExpenseForm onComplete = {this.handleUpdate} expense={expense} />)}
+        <ExpenseForm onComplete={this.handleUpdate} expense={expense} />)}
       </div>
     )
   }

@@ -4,6 +4,7 @@ import CategoryItem from '../category-item'
 import {connect} from 'react-redux'
 import * as category from '../../action/category.js'
 import './dashboard.scss'
+import DropZone from '../drop-zone'
 
 class Dashboard extends React.Component {
   render(){
@@ -11,6 +12,7 @@ class Dashboard extends React.Component {
 
     return (
       <div className='dashboard'>
+      <DropZone></DropZone>
 
         <p>Create multiple categories to keep track of your spending </p>
           <ul>
