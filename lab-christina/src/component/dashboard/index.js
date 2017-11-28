@@ -12,7 +12,6 @@ class Dashboard extends React.Component {
 
     return (
       <div className='dashboard'>
-      <DropZone></DropZone>
 
         <p>Create multiple categories to keep track of your spending </p>
           <ul>
@@ -20,7 +19,6 @@ class Dashboard extends React.Component {
             <li className='list'>&#8594; Groceries</li>
             <li className='list'>&#8594; Personal</li>
           </ul>
-
       <CategoryForm onComplete={categoryCreate} />
         {categories.map((category, i) =>
           <CategoryItem

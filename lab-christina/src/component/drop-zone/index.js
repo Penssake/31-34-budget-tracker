@@ -1,4 +1,5 @@
 import React from 'react'
+import './drop-zone.scss'
 
 class DropZone extends React.Component {
   constructor(props){
@@ -27,7 +28,7 @@ class DropZone extends React.Component {
         className='drop-zone'
         onDragOver={this.handleDragOver}
         onDrop={this.handleDrop} >
-        <h1>wtf</h1>
+        <h1>DROP HERE</h1>
         {this.props.children}
       </div>
     )

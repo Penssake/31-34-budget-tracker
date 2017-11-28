@@ -29,7 +29,6 @@ class CategoryItem extends React.Component {
 
     return (
       <div className='category-item'>
-        <DropZone onComplete={(expense) => categoryDragToSection(expense, category.id)}>
           <section className='category-item'>
             <button className='remove-button' onClick={() => categoryRemove(category)}> x </button>
             <button onClick={() => this.setState({editing:true})} className='update-button'>&#9998;</button>
@@ -41,7 +40,6 @@ class CategoryItem extends React.Component {
           {util.renderIf(editing,
              <CategoryForm category={category} onComplete={this.handleUpdate} />)}
           </section>
-      </DropZone>
 
       <section>
         <ExpenseForm onComplete={expenseCreate} category={category}/>
