@@ -1,6 +1,33 @@
 @import 'vars';
+
 .landing {
   .section-form:first-child {
     border: 1px solid $accent-color-lime;
   }
 }
+
+.landing {
+  width: 80%;
+}
+
+.landing div {
+
+}
+
+.landing h1 {
+  text-align: center;
+  font-style: $font-main;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 50px;
+}
+
+.landing p {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+}
+ img {
+   width: 60%;
+   margin-left: 40%;
+ }

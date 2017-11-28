@@ -3,6 +3,7 @@ import CategoryForm from '../category-form'
 import CategoryItem from '../category-item'
 import {connect} from 'react-redux'
 import * as category from '../../action/category.js'
+import './dashboard.scss'
 
 class Dashboard extends React.Component {
   render(){
@@ -10,9 +11,15 @@ class Dashboard extends React.Component {
 
     return (
       <div className='dashboard'>
-      <h3> Dashboard </h3>
 
-        <CategoryForm onComplete={categoryCreate} />
+        <p>Create multiple categories to keep track of your spending </p>
+          <ul>
+            <li className='list-header'>Suggested categories:</li>
+            <li className='list'>&#8594; Groceries</li>
+            <li className='list'>&#8594; Personal</li>
+          </ul>
+
+      <CategoryForm onComplete={categoryCreate} />
         {categories.map((category, i) =>
           <CategoryItem
             key={i}

@@ -1,0 +1,27 @@
+@import 'vars';
+
+div.expense-item {
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 1);
+  width: 40%;
+  margin-top: 10px;
+  display: inline-block;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+button.remove-button {
+  color: $primary-color-purple;
+  background-color: white;
+  float: right;
+  display: block;
+  margin: 1px;
+}
+
+button.update-button {
+  color: $primary-color-purple;
+  background-color: white;
+  width: 20px;
+  float: right;
+  display: block;
+  margin: 1px;
+}

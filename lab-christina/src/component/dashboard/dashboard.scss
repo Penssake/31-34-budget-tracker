@@ -1,0 +1,24 @@
+@import 'vars';
+
+p {
+  margin-left: 5px;
+  margin-top: 10px;
+  color: $primary-color-purple;
+  font-size: 18px;
+  font-family: $font-main;
+}
+
+.list-header {
+  margin-left: 5px;
+  margin-top: 10px;
+  font-size: 16px;
+  font-family: $font-main;
+}
+
+li {
+  margin-left: 10px;
+}
+
+ul {
+  margin-bottom: 10px;
+}

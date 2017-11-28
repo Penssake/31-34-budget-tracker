@@ -1,8 +1,10 @@
 import React from 'react'
+import './category-form.scss'
+import * as util from '../../lib/util.js'
 
 let clearState = {
   title: '',
-  amount: '0',
+  amount: '',
 }
 
 class CategoryForm extends React.Component {
@@ -42,15 +44,15 @@ class CategoryForm extends React.Component {
         <input
           type='text'
           name='name'
-          placeholder='category name'
+          placeholder='Category Name'
           value={this.state.name}
           onChange={this.handleChange}
         />
-
         <input
+          className='amount'
           type='number'
           name='amount'
-          placeholder='amount'
+          placeholder='Category Budget'
           value={this.state.amount}
           onChange={this.handleChange}
         />

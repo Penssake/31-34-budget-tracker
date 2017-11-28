@@ -1,0 +1,32 @@
+@import 'vars';
+
+div.category-item {
+  border: 1px solid $accent-color-lime;
+  width: 30%;
+  margin-top: 10px;
+  display: block;
+  float: left;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+section.category-item {
+  padding: 5px;
+}
+button.remove-button {
+  color: $primary-color-purple;
+  background-color: white;
+  width: 20px;
+  float: right;
+  display: block;
+  margin: 1px;
+}
+
+button.update-button {
+  color: $primary-color-purple;
+  background-color: white;
+  width: 20px;
+  float: right;
+  display: block;
+  margin: 1px;
+}
