@@ -7,34 +7,47 @@ import ExpenseItem from '../expense-item'
 import * as expense from '../../action/expense.js'
 import * as util from '../../lib/util.js'
 import './category-item.scss'
-import Modal from '../modal'
+import DropZone from '../drop-zone'
 
 class CategoryItem extends React.Component {
+  constructor(props){
+    super(props)
+
+    this.state = {editing: false}
+    this.handleUpdate = this.handleUpdate.bind(this)
+}
+
+  handleUpdate(category){
+    this.props.categoryUpdate(category)
+    this.setState({editing: false})
+  }
+
   render(){
-    let {category, categoryRemove, categoryUpdate, expenseCreate, expenses} = this.props
+    let {categoryDragToSection, category, categoryRemove, categoryUpdate, expenseCreate, expenses} = this.props
     let categoryExpenses = expenses[category.id]
-    let showEdit = () => categoryUpdate({...category, editing:true})
-    let hideEdit = () => categoryUpdate({...category, editing:false})
+    let {editing} = this.state;
 
     return (
       <div className='category-item'>
+        <DropZone onComplete={(expense) => categoryDragToSection(expense, category.id)}>
+          <section className='category-item'>
+            <button className='remove-button' onClick={() => categoryRemove(category)}> x </button>
+            <button onClick={() => this.setState({editing:true})} className='update-button'>&#9998;</button>
+          {util.renderIf(!editing,
+            <h3><strong>{category.name} ${category.amount} </strong></h3>)}
+          </section>
 
-      <section className='category-item'>
-      <button className='remove-button' onClick={() => categoryRemove(category)}> x </button>
-      <button onClick={showEdit} className='update-button'>&#9998;</button>
-      <h3><strong>{category.name} ${category.amount} </strong></h3>
-      </section>
+          <section className='category-update'>
+          {util.renderIf(editing,
+             <CategoryForm category={category} onComplete={this.handleUpdate} />)}
+          </section>
+      </DropZone>
 
-      <Modal onClose={hideEdit} show={category.editing} >
-      <section className='category-update'>
-      <CategoryForm onComplete={categoryUpdate} category={category}/>
-      </section>
-      </Modal>
       <section>
-      <ExpenseForm onComplete={expenseCreate} category={category}/>
-      {categoryExpenses.map((expense, i) =>
-        <ExpenseItem expense={expense} key={i} />
-      )}
+        <ExpenseForm onComplete={expenseCreate} category={category}/>
+          {categoryExpenses.map((expense, i) =>
+            <ExpenseItem expense={expense} key={i} />
+          )}
       </section>
 
       </div>
@@ -48,6 +61,7 @@ let mapStateToProps = (state) => ({
 
 let mapDispatchToProps = (dispatch) => ({
   categoryUpdate: (data) => dispatch(category.update(data)),
+  categoryDragToSection: (data, categoryID) => dispatch(category.updateCategory(data, categoryID)),
   categoryRemove: (data) => dispatch(category.remove(data)),
   expenseCreate: (data) => dispatch(expense.create(data)),
 })
