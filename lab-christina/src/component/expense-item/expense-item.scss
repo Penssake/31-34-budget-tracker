@@ -1,7 +1,7 @@
 @import 'vars';
 
 div.expense-item {
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 1);
+  border: 1px solid $accent-color-lime;
   width: 40%;
   margin-top: 10px;
   display: inline-block;
@@ -24,4 +24,13 @@ button.update-button {
   float: right;
   display: block;
   margin: 1px;
+}
+
+button.add-expense {
+  color: $primary-color-purple;
+  background-color: white;
+  width: 20px;
+  float: right;
+  display: block;
+  margin-right: 10px;
 }

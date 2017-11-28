@@ -22,8 +22,7 @@ class CategoryItem extends React.Component {
       <section className='category-item'>
       <button className='remove-button' onClick={() => categoryRemove(category)}> x </button>
       <button onClick={showEdit} className='update-button'>&#9998;</button>
-      <h3><strong>{category.name}</strong></h3>
-      <p>${category.amount}</p>
+      <h3><strong>{category.name} ${category.amount} </strong></h3>
       </section>
 
       <Modal onClose={hideEdit} show={category.editing} >

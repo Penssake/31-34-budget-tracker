@@ -1,4 +1,6 @@
 import React from 'react'
+import './modal.scss'
+
 
 class Modal extends React.Component {
   render(){
@@ -6,11 +8,13 @@ class Modal extends React.Component {
       <div
         style={{
           display: this.props.show ? 'block' : 'none',
-          background: 'blue',
-          width: '40%'
+          background: 'lavender',
+          width: '100%',
+          height: '30%'
         }}
         className='modal'>
-        <button onClick={this.props.onClose}>close</button>
+        <button className='modal-close'onClick={this.props.onClose}>x</button>
+        <p>Update your category name & budget</p>
         <main>
           {this.props.children}
         </main>
