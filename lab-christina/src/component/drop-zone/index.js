@@ -17,6 +17,7 @@ class DropZone extends React.Component {
     try {
       let data = JSON.parse(event.dataTransfer.getData('application/json'));
       this.props.onComplete(data);
+      console.log({data});
     } catch (error) {
       console.log('__BAD DRAG DATA__', error);
     }

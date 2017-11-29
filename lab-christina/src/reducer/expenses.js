@@ -26,7 +26,7 @@ export default (state=emptyState, {type, payload}) => {
     case 'EXPENSE_UPDATE_CATEGORY_ID':
       let expense = payload.expense
       let oldSectionID = expense.sectionID
-      if(oldSectionID == payload.sectionID)
+      if(oldSectionID === payload.sectionID)
         return state
       let oldSection = state[expense.sectionID].filter(item => item.id !== expense.id)
         expense.sectionID = payload.sectionID
