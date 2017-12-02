@@ -18,7 +18,7 @@ app minus the ID that matches the one selected for removal.
 ID with new the categoryID.
 
 ```
-#### Expense
+#### ExpenseItem
 ```
 * Each Expense item contains a price and a title
 * The Expense reducer supports a 'CATEGORY_CREATE' action, a 'CATEGORY_UPDATE' action, an 
