@@ -5,8 +5,8 @@
 ```
 Start: npm run watch
 ```
-```
 #### CategoryItem
+```
 * Each Category item contains an ID, timestamp, name, and budgeted amount when created
 * The category reducer supports a `CATEGORY_CREATE` action, a `CATEGORY_UPDATE` action 
 and a `CATEGORY_REMOVE` action.
